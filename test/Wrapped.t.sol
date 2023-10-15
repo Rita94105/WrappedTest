@@ -149,7 +149,7 @@ contract WrappedTest is Test{
 
         vm.startPrank(spender);
 
-        //emit Transfer event
+        //9. transferFrom 應該要可以使用他人的 allowance
         vm.expectEmit(true, true, false, false);
         emit Transfer(owner,to, 1 ether);
 
@@ -157,7 +157,7 @@ contract WrappedTest is Test{
         require(success);
         assertEq(success,true,"fail to transferFrom");
 
-        //9. transferFrom 後應該要減除用完的 allowance
+        //10. transferFrom 後應該要減除用完的 allowance
         uint256 newAproveToken = wrapped.allowance(owner,spender);
         assertEq(newAproveToken, approveToken - .5 ether);
 
