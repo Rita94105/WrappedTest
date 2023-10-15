@@ -2,6 +2,6 @@
 
 ```
 git clone --recurse-submodules https://github.com/Rita94105/WrappedTest.git
-cd weth
+cd WrappedTest
 forge test --match-contract Wrapped
 ```
